@@ -2,11 +2,6 @@
 import React, { useState } from 'react';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
-import { Dashboard } from '@/components/Dashboard';
-import { Children } from '@/components/Children';
-import { Services } from '@/components/Services';
-import { Finance } from '@/components/Finance';
-import { Reports } from '@/components/Reports';
 
 const Index = () => {
   const [selectedYear, setSelectedYear] = useState('2024');
@@ -35,7 +30,20 @@ const Index = () => {
               </select>
             </div>
           </div>
-          <Dashboard selectedYear={selectedYear} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-sm border">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Bienvenue</h3>
+              <p className="text-gray-600">Système de gestion de l'École Nid Douillet</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Année active</h3>
+              <p className="text-gray-600">Année scolaire {selectedYear}-{parseInt(selectedYear) + 1}</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border">
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Navigation</h3>
+              <p className="text-gray-600">Utilisez le menu de gauche pour naviguer</p>
+            </div>
+          </div>
         </main>
       </div>
     </SidebarProvider>

@@ -41,7 +41,7 @@ export function AppSidebar() {
   const isActive = (path: string) => currentPath === path;
 
   return (
-    <Sidebar className={collapsed ? 'w-14' : 'w-64'} collapsible>
+    <Sidebar className={collapsed ? 'w-14' : 'w-64'} collapsible="icon">
       <div className="p-6 border-b border-gray-200">
         <div className="flex items-center space-x-3">
           <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-2 rounded-lg">
